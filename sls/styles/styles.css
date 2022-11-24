@@ -1,0 +1,64 @@
+p
+        {
+            color: #424242;
+            font-family: Verdana, Geneva, sans-serif;           
+        }
+body
+        {
+            background-color: #f1f1f1;
+        }
+#mid
+         {
+            text-align: center;
+         }
+.mycls
+         {
+           font-family: Tahoma, Geneva, sans-serif;
+         }
+/*:not(p)
+         {
+            background: #e7f4e4;
+         }*/
+a:visited 
+         {
+            color: #4c2c92;
+         }
+a:hover 
+         {
+            color: #212121;
+         }
+a:active 
+         {
+            color: #1C1C1C;
+         }
+ul 
+         {
+             list-style-type: none;
+             margin: 0;
+             padding: 0;
+             overflow: hidden;
+             background-color: #8ba6ca;
+         }
+li
+         {
+             float: left;
+         }
+li a 
+         {
+           display: block;
+           color: white;
+           text-align: center;
+           padding: 14px 16px;
+           text-decoration: none;
+         }   
+.mycls1
+
+         {
+             max-width: 475px;
+             margin: auto;
+             overflow: auto;
+         }         
+
+
+                 
+      
