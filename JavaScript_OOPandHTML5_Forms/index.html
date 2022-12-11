@@ -1,1 +1,46 @@
+<!DOCTYPE html>
 
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function myObject() {
+            this.firstValue = 10;
+        }
+
+        myObject.prototype.addToValue = function (number) {
+            this.total = this.firstValue + number;
+        }
+
+        myObject.prototype.getTotal = function () {
+            console.log(this.total);
+        }
+
+        var anObject = new myObject();
+        console.log('object', anObject);
+        anObject.addToValue(5);
+        anObject.getTotal();
+
+        window.onload = function () {
+            var form = document.getElementById("myForm");
+            console.log(form);
+            form.onsubmit = function (e) {
+                var newobject = new myObject();
+                var formValue = document.getElementById("formValue").value;
+                console.log('formValue', formValue);
+                newobject.addToValue(parseInt(formValue));
+                newobject.getTotal();
+                e.preventDefault();
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form id="myForm">
+        <input type="number" name="formValue" id="formValue" />
+        <input type="submit" value="submit" />
+    </form>
+</body>
+</html>
