@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <button onclick="startWebWorker()">Start Web Worker</button>
+    <p>Webworker Task: <output id="wResult"></output></p>
+    <p>Time: <output id="wResultTime"></output></p>
+
+    <script>
+
+        function startWebWorker() {
+            var startTime = new Date();
+            var endTime = null;
+
+            var division = 10;
+            var numbersToAdd = 100000000;
+
+            var total = 0;
+            var completed = 0;
+
+            for (i = 0; i < division; i++) {
+                var start = numbersToAdd / division * i + 1;
+                var end = numbersToAdd / division * (i + 1);
+                var worker = new Worker("calculator_workers.js");
+                worker.onmessage = function (evt) {
+                    total += evt.data;
+                    completed++;
+                    if (completed == division) {
+                        document.getElementById("wResult").innerHTML = total;
+                        endTime = new Date();
+                        document.getElementById("wResultTime").innerHTML = (endTime - startTime);
+                    }
+                }
+                worker.postMessage([start, end]);
+            }
+        }
+        
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div[attribute1='value1']").css("background", "url('img/bg.jpg')");
+            $("div.type1").css("background", "linear-gradient(to right, blue, red, green)");
+        });
+    </script>
+    <style>
+        @font-face {
+            font-family: RofiTaste;
+            src: url('font/RofiTaste.otf');
+        }
+
+        div {
+            margin: 15px;
+            padding: 5px;
+            width: 400px;
+            height: 250px;
+            float: left;
+            font-size: 24px;
+            border: 2px solid;
+            font-family: RofiTaste;
+        }
+    </style>
+</head>
+<body>
+    <div class="type1">section 1</div>
+    <div class="type1">section 2</div>
+    <div attribute1="value1">section 3</div>
+    <div attribute2="value2">section 4</div>
+    <div attribute3="value3">section 5</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+     // 1. Delcare
+    function myObject () {
+      // 3. Add a property
+      this.firstValue = 10;
+    }
+
+    // 4. Add a method, you add to the prototype
+    myObject.prototype.addToValue = function(number) {
+      this.secondValue = this.firstValue + number;
+    }
+
+    myObject.prototype.getTotal = function() {
+      console.log(this.secondValue);
+    }
+
+    // 2. Instantiate object
+    //myobject is now an object of type someObject!
+    var myobject = new myObject();
+    console.log(myobject);
+    // 4...
+    myobject.addToValue(5);
+    myobject.getTotal();
+
+    window.onload = function () {
+      // 5. Form stuff
+      var form = document.getElementById("myForm");
+      console.log('form', form);
+      form.onsubmit = function(e) {
+        var newobject = new myObject();
+        var formValue = document.getElementById("formValue").value;
+        console.log('formValue', formValue);
+        newobject.addToValue(parseInt(formValue));
+        newobject.getTotal();
+        e.preventDefault();
+      }
+    }
+  </script>
+</head>
+<body>
+  <form id="myForm">
+    <input type="number" name="formValue" id="formValue"/>
+    <input type="submit" value="Submit" />
+  </form>
+
+</body>
+</html>
