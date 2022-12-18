@@ -1,0 +1,10 @@
+
+Lab Guides
+Exercise1 - Styling with HTML5 and JavaScript
+Exercise2 - Using JavaScript OOP and HTML5 Forms 
+Exercise3 - Styling with Complex HTML5 and CSS3
+Exercise4 - HTML5 Animations and Adaptive AI
+Exercise5 - Provisioning Data in HTML5
+Exercise6 - Processing and Web Workers in HTML5
+Exercise7 - Input Validation with HTML5 and JavaScript
+Exercise8 - Use Content Layouts and Media Queries
